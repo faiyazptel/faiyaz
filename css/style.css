@@ -25,7 +25,7 @@ html {
 body {
   font-family: Inter, Arial, Helvetica, sans-serif;
   color: var(--color-body);
-  font-size: 2.4rem;
+  font-size: 2rem;
   line-height: 1.5;
 }
 
@@ -203,7 +203,7 @@ a {
   font-weight: 600;
   margin: 1rem 0;
   outline: 0;
-  padding: 2rem 3rem;
+  padding: 2rem 4vw;
   text-align: center;
   text-transform: uppercase;
   white-space: nowrap;
@@ -289,6 +289,7 @@ a {
   border: 0;
   flex-grow: 1;
   padding: 1.5rem 2rem;
+  width: 0;
 }
 
 .input-group .btn {
@@ -363,7 +364,7 @@ a {
 }
 
 .plan--popular {
-  transform: scale(1.1);
+  transform: scale(1);
 }
 .plan--popular .card__header {
   position: relative;
@@ -393,6 +394,11 @@ a {
   margin-bottom: 2rem;
 }
 
+@media screen and (min-width: 768px) {
+  .plan--popular {
+    transform: scale(1.1);
+  }
+}
 /* Medida */
 
 .media {
@@ -407,11 +413,17 @@ a {
 .media__body {
   margin: 0 2rem;
 }
-
+.media__content {
+  font-size: 2rem;
+}
 .media__image {
   margin-top: 1rem;
 }
-
+@media screen and (min-width: 768px) {
+  .media__content {
+    font-size: 1.8rem;
+  }
+}
 /* quote */
 
 .quote {
@@ -419,6 +431,10 @@ a {
   font-style: italic;
   color: var(--color-body-darker);
   line-height: 1.3;
+  margin: 3rem 0;
+}
+.quote__text {
+  font-size: 2rem;
 }
 .quote__text::before {
   content: open-quote;
@@ -429,7 +445,7 @@ a {
 }
 
 .quote__author {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 500;
   font-style: normal;
   margin-bottom: 0;
@@ -438,7 +454,7 @@ a {
 .quote_organization {
   opacity: 40%;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .quote__line {
@@ -449,6 +465,8 @@ a {
 @media screen and (min-width: 1024px) {
   .quote {
     font-size: 2rem;
+    margin: 5rem 0 0 6rem;
+    line-height: 1.5;
   }
 
   .quote__author {
@@ -509,11 +527,14 @@ a {
 }
 
 /* Callout */
+
 .callout {
   padding: 4rem;
   border-radius: 5px;
 }
-
+.callout__signup {
+  transform: translateY(5rem);
+}
 .callout--primary {
   background: var(--color-primary);
   color: #fff;
@@ -605,11 +626,11 @@ a {
 }
 
 .block--skewed-right {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 90%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 95%);
   padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 .block--skewed-left {
-  clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 95%, 0% 100%);
   padding-bottom: calc(var(--padding-vertical) + 4rem);
 }
 .container {
@@ -709,8 +730,9 @@ a {
 }
 
 .block-domain__price {
+  color: var(--color-headings);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 6rem);
   font-size: 2rem;
   font-weight: 600;
@@ -780,6 +802,7 @@ feature:first-of-type {
 
 .footer {
   background: #232323;
+  padding-top: 10rem;
 }
 
 .footer__section {
